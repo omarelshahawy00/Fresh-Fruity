@@ -25,7 +25,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             SvgPicture.asset(Assets.splashTopImg),
           ],

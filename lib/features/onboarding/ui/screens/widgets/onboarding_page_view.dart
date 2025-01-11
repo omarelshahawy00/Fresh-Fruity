@@ -11,6 +11,10 @@ class OnboardingPageView extends StatelessWidget {
       controller: pageController,
       children: [
         PageViewItem(
+          skipTitle: GestureDetector(
+            onTap: () => pageController.jumpToPage(1),
+            child: Text('تخط'),
+          ),
           backgroundImage: ConstImages.onboardingBackground1,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +35,6 @@ class OnboardingPageView extends StatelessWidget {
         ),
         PageViewItem(
           backgroundImage: ConstImages.onboardingBackground2,
-          skipTitle: Text('تخط'),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

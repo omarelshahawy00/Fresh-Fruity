@@ -1,4 +1,5 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:ecommerce_app/core/theming/colors.dart';
 import 'package:ecommerce_app/core/utils/const_images.dart';
 import 'package:ecommerce_app/core/widgets/app_text_button.dart';
 import 'package:ecommerce_app/features/onboarding/ui/screens/widgets/onboarding_page_view.dart';
@@ -43,8 +44,9 @@ class _OnboardingScreenBodyState extends State<OnboardingScreenBody> {
         ),
         DotsIndicator(
           decorator: DotsDecorator(
-            color: Colors.green.withValues(alpha: currentPage == 0 ? .5 : 1),
-            activeColor: Colors.green,
+            color: ColorsManager.mainGreen
+                .withValues(alpha: currentPage == 0 ? .5 : 1),
+            activeColor: ColorsManager.mainGreen,
           ),
           dotsCount: 2,
           position: 0,
@@ -60,7 +62,7 @@ class _OnboardingScreenBodyState extends State<OnboardingScreenBody> {
             child: AppTextButton(
               onPressed: () {},
               buttonText: 'ابدا الان',
-              backgroundColor: const Color.fromARGB(255, 9, 80, 11),
+              backgroundColor: ColorsManager.mainGreen,
             ),
           ),
         ),

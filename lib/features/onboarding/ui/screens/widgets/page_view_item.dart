@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -7,11 +8,13 @@ class PageViewItem extends StatelessWidget {
       required this.backgroundImage,
       required this.subTitle,
       required this.centerImage,
-      required this.title});
+      required this.title,
+      this.skipTitle});
   final String backgroundImage;
   final String subTitle;
   final String centerImage;
   final Widget title;
+  final Widget? skipTitle;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,7 +40,7 @@ class PageViewItem extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text('تخط'),
+                child: skipTitle ?? Container(),
               ),
             ],
           ),

@@ -1,18 +1,70 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:ecommerce_app/core/utils/const_images.dart';
+import 'package:ecommerce_app/core/widgets/app_text_button.dart';
 import 'package:ecommerce_app/features/onboarding/ui/screens/widgets/onboarding_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class OnboardingScreenBody extends StatelessWidget {
+class OnboardingScreenBody extends StatefulWidget {
   const OnboardingScreenBody({super.key});
+
+  @override
+  State<OnboardingScreenBody> createState() => _OnboardingScreenBodyState();
+}
+
+late PageController pageController;
+int currentPage = 0;
+
+class _OnboardingScreenBodyState extends State<OnboardingScreenBody> {
+  @override
+  void initState() {
+    pageController = PageController();
+    pageController.addListener(() {
+      currentPage = pageController.page!.round();
+      setState(() {});
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Expanded(
-          child: OnboardingPageView(),
+          child: OnboardingPageView(
+            pageController: pageController,
+          ),
         ),
+        DotsIndicator(
+          decorator: DotsDecorator(
+            color: Colors.green.withValues(alpha: currentPage == 0 ? .5 : 1),
+            activeColor: Colors.green,
+          ),
+          dotsCount: 2,
+          position: 0,
+        ),
+        SizedBox(height: 20),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Visibility(
+            maintainAnimation: true,
+            maintainSize: true,
+            maintainState: true,
+            visible: currentPage == 0 ? false : true,
+            child: AppTextButton(
+              onPressed: () {},
+              buttonText: 'ابدا الان',
+              backgroundColor: const Color.fromARGB(255, 9, 80, 11),
+            ),
+          ),
+        ),
+        SizedBox(height: 20),
       ],
     );
   }

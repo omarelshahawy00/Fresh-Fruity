@@ -3,11 +3,12 @@ import 'package:ecommerce_app/features/onboarding/ui/screens/widgets/page_view_i
 import 'package:flutter/material.dart';
 
 class OnboardingPageView extends StatelessWidget {
-  const OnboardingPageView({super.key});
-
+  const OnboardingPageView({super.key, required this.pageController});
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return PageView(
+      controller: pageController,
       children: [
         PageViewItem(
           backgroundImage: ConstImages.onboardingBackground1,
@@ -30,6 +31,7 @@ class OnboardingPageView extends StatelessWidget {
         ),
         PageViewItem(
           backgroundImage: ConstImages.onboardingBackground2,
+          skipTitle: Text('تخط'),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

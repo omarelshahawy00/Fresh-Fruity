@@ -35,7 +35,7 @@ class AppTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         hintText: hintText,
-        hintStyle: hintTextStyle ?? TextStyles.font14LightGrayRegular,
+        hintStyle: hintTextStyle ?? TextStyles.size13Weight600,
         fillColor: ColorsManager.moreLightGray,
         filled: true,
         suffixIcon: suffixIcon,

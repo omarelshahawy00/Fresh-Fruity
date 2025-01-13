@@ -1,4 +1,8 @@
+import 'package:ecommerce_app/core/helper_functions/on_generate_route.dart';
+import 'package:ecommerce_app/core/services/shared_preferences_singletone.dart';
+import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/core/utils/const_images.dart';
+import 'package:ecommerce_app/core/utils/constants.dart';
 import 'package:ecommerce_app/features/onboarding/ui/screens/widgets/page_view_item.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +16,18 @@ class OnboardingPageView extends StatelessWidget {
       children: [
         PageViewItem(
           skipTitle: GestureDetector(
-            onTap: () => pageController.jumpToPage(1),
-            child: Text('تخط'),
+            onTap: () {
+              Prefs.setBool(isOnBoardingViewSeen, true);
+              Navigator.pushReplacementNamed(context, AppRouter.loginScreen);
+            },
+            child: Text(
+              'تخط',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w400,
+                color: Colors.grey,
+              ),
+            ),
           ),
           backgroundImage: ConstImages.onboardingBackground1,
           title: Row(
@@ -21,11 +35,17 @@ class OnboardingPageView extends StatelessWidget {
             children: [
               Text(
                 'مرحبًا بك في',
-                style: TextStyle(fontSize: 23, fontWeight: FontWeight.w700),
+                style: TextStyles.size23Weight700,
               ),
-              Text(
-                'FreshFruity',
-                style: TextStyle(fontSize: 23, fontWeight: FontWeight.w700),
+              Row(
+                children: [
+                  Text(
+                    ' Fruity',
+                    style: TextStyles.size23Weight700
+                        .copyWith(color: Color(0xfff4a91f)),
+                  ),
+                  Text('&Fresh', style: TextStyles.size23Weight700),
+                ],
               ),
             ],
           ),
@@ -40,7 +60,7 @@ class OnboardingPageView extends StatelessWidget {
             children: [
               Text(
                 'ابحث وتسوق',
-                style: TextStyle(fontSize: 23, fontWeight: FontWeight.w700),
+                style: TextStyles.size23Weight700,
               ),
             ],
           ),

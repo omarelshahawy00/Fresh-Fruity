@@ -1,10 +1,12 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:ecommerce_app/core/helper_functions/on_generate_route.dart';
+import 'package:ecommerce_app/core/services/shared_preferences_singletone.dart';
 import 'package:ecommerce_app/core/theming/colors.dart';
-import 'package:ecommerce_app/core/utils/const_images.dart';
 import 'package:ecommerce_app/core/widgets/app_text_button.dart';
 import 'package:ecommerce_app/features/onboarding/ui/screens/widgets/onboarding_page_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
+import '../../../../../core/utils/constants.dart';
 
 class OnboardingScreenBody extends StatefulWidget {
   const OnboardingScreenBody({super.key});
@@ -60,7 +62,10 @@ class _OnboardingScreenBodyState extends State<OnboardingScreenBody> {
             maintainState: true,
             visible: currentPage == 0 ? false : true,
             child: AppTextButton(
-              onPressed: () {},
+              onPressed: () {
+                Prefs.setBool(isOnBoardingViewSeen, true);
+                Navigator.pushReplacementNamed(context, AppRouter.loginScreen);
+              },
               buttonText: 'ابدا الان',
               backgroundColor: ColorsManager.mainGreen,
             ),

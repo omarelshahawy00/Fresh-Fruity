@@ -1,4 +1,4 @@
-import 'package:dots_indicator/dots_indicator.dart';
+import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -59,7 +59,7 @@ class PageViewItem extends StatelessWidget {
               Text(
                 textAlign: TextAlign.center,
                 subTitle,
-                style: TextStyle(fontSize: 16),
+                style: TextStyles.size13Weight600.copyWith(color: Colors.black),
               ),
             ],
           ),

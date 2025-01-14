@@ -2,8 +2,8 @@ import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/core/widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/widgets/app_text_button.dart';
+import '../../../../../../core/theming/colors.dart';
+import '../../../../../../core/widgets/app_text_button.dart';
 
 class EmailAndPasswordSection extends StatelessWidget {
   const EmailAndPasswordSection({super.key});
@@ -29,7 +29,11 @@ class EmailAndPasswordSection extends StatelessWidget {
           fillColor: Color(0xfff9fafa),
           hintText: 'كلمة المرور',
           isObscureText: true,
-          suffixIcon: Icon(Icons.visibility),
+          suffixIcon: Icon(
+            Icons.visibility,
+            size: 24,
+            color: Color(0xffc9cecf),
+          ),
           hintTextStyle: TextStyles.size13Weight700,
           borderRadius: BorderRadius.circular(4),
           backgroundColor: Color(0xfff9fafa),

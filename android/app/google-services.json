@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "442654998013",
+    "project_id": "fresh-fruity-1e7c0",
+    "storage_bucket": "fresh-fruity-1e7c0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442654998013:android:3569e42cbf603ab5eeed94",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT8QHTJ20Nrnm3YUMMXap47yjaJXhn8AQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

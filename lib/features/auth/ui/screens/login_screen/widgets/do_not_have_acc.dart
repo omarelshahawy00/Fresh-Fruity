@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/helper_functions/on_generate_route.dart';
 import 'package:ecommerce_app/core/theming/colors.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +13,18 @@ class DoNotHaveAcc extends StatelessWidget {
       children: [
         Text(
           'لا تمتلك حساب؟ ',
-          style: TextStyles.size16Weight600.copyWith(color: ColorsManager.gray),
-        ),
-        Text(
-          'قم بانشاء حساب',
           style: TextStyles.size16Weight600
-              .copyWith(color: ColorsManager.mainGreen),
+              .copyWith(color: ColorsManager.LightText),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, AppRouter.SignupScreen);
+          },
+          child: Text(
+            'قم بانشاء حساب',
+            style: TextStyles.size16Weight600
+                .copyWith(color: ColorsManager.mainGreen),
+          ),
         ),
         SizedBox(height: 17),
       ],

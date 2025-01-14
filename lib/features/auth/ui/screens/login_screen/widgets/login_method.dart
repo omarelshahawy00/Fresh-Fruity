@@ -18,7 +18,7 @@ class LoginMethod extends StatelessWidget {
             // TODO
           },
           buttonText: 'تسجيل بواسطة جوجل',
-          textStyle: TextStyles.size16Weight600.copyWith(color: Colors.black),
+          textStyle: TextStyles.size16Weight600,
           backgroundColor: Colors.white,
         ),
         AppTextButton(
@@ -27,7 +27,7 @@ class LoginMethod extends StatelessWidget {
             // TODO
           },
           buttonText: 'تسجيل بواسطة أبل',
-          textStyle: TextStyles.size16Weight600.copyWith(color: Colors.black),
+          textStyle: TextStyles.size16Weight600,
           backgroundColor: Colors.white,
         ),
         AppTextButton(
@@ -36,7 +36,7 @@ class LoginMethod extends StatelessWidget {
             // TODO
           },
           buttonText: 'تسجيل بواسطة فيسبوك',
-          textStyle: TextStyles.size16Weight600.copyWith(color: Colors.black),
+          textStyle: TextStyles.size16Weight600,
           backgroundColor: Colors.white,
         ),
       ],

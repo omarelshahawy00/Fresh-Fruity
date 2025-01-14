@@ -1,7 +1,7 @@
-import 'package:ecommerce_app/features/auth/ui/screens/widgets/login_screen_body.dart';
+import 'package:ecommerce_app/features/auth/ui/screens/login_screen/widgets/login_screen_body.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/widgets/custom_appbar.dart';
+import '../../../../../core/widgets/custom_appbar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

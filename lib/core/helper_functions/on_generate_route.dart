@@ -1,4 +1,5 @@
-import 'package:ecommerce_app/features/auth/ui/screens/login_screen.dart';
+import 'package:ecommerce_app/features/auth/ui/screens/login_screen/login_screen.dart';
+import 'package:ecommerce_app/features/auth/ui/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:ecommerce_app/features/onboarding/ui/screens/onboarding_screen.dart';
 import 'package:ecommerce_app/features/splash/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ class AppRouter {
   static const String splashScreen = 'splashScreen';
   static const String onboardingScreen = 'onboardingScreen';
   static const String loginScreen = 'loginScreen';
+  static const String SignupScreen = 'SignupScreen';
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splashScreen:
@@ -17,6 +19,10 @@ class AppRouter {
       case loginScreen:
         return MaterialPageRoute(
           builder: (context) => const LoginScreen(),
+        );
+      case SignupScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SignUpScreen(),
         );
       default:
         return MaterialPageRoute(builder: (context) => const Scaffold());

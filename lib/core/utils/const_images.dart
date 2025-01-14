@@ -7,4 +7,8 @@ class ConstImages {
       'assets/images/onboarding_images/center_icon1.svg';
   static const String onboardingCenterIcon2 =
       'assets/images/onboarding_images/center_icon2.svg';
+  static const String googleLogin = 'assets/images/login_icons/google_icon.svg';
+  static const String facebookLogin =
+      'assets/images/login_icons/facebook_icon.svg';
+  static const String appleLogin = 'assets/images/login_icons/apple_icon.svg';
 }

@@ -14,6 +14,9 @@ class AppTextButton extends StatelessWidget {
     this.borderRadius,
     this.horizontalPadding,
     this.verticalPadding,
+    this.leadingIcon, // New parameter for suffix icon
+    this.iconSpacing, // Optional spacing between text and icon
+    this.borderSide,
   });
 
   final VoidCallback onPressed;
@@ -25,6 +28,9 @@ class AppTextButton extends StatelessWidget {
   final BorderRadius? borderRadius;
   final double? horizontalPadding;
   final double? verticalPadding;
+  final Widget? leadingIcon; // Widget for the suffix icon
+  final double? iconSpacing; // Optional spacing between text and icon
+  final BorderSide? borderSide;
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +39,29 @@ class AppTextButton extends StatelessWidget {
           fixedSize: Size(buttonWidth ?? double.maxFinite, buttonHeight ?? 52),
           backgroundColor: backgroundColor ?? ColorsManager.mainBlue,
           shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ??
-                BorderRadius.circular(16), // Rounds the button corners
+            borderRadius: borderRadius ?? BorderRadius.circular(16),
+            side: borderSide ??
+                BorderSide(
+                  color: Color(0xffDDDFDF),
+                  width: 1,
+                ),
           ),
           padding: EdgeInsets.symmetric(
-              horizontal: horizontalPadding ?? 12,
-              vertical: verticalPadding ?? 14),
+            horizontal: horizontalPadding ?? 0,
+            vertical: verticalPadding ?? 0,
+          ),
         ),
         onPressed: onPressed,
-        child: Text(
-          buttonText,
-          style: textStyle ?? TextStyles.size16Weight700,
+        child: ListTile(
+          visualDensity: VisualDensity(
+            vertical: VisualDensity.minimumDensity,
+          ),
+          leading: leadingIcon,
+          title: Text(
+            buttonText,
+            textAlign: TextAlign.center,
+            style: textStyle ?? TextStyles.size16Weight700,
+          ),
         ));
   }
 }

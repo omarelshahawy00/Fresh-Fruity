@@ -15,6 +15,8 @@ class AppTextFormField extends StatelessWidget {
     this.isObscureText,
     this.backgroundColor,
     this.suffixIcon,
+    this.readOnly,
+    this.fillColor,
   });
 
   final String hintText;
@@ -27,34 +29,39 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final Color? backgroundColor;
   final Widget? suffixIcon;
+  final bool? readOnly;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: readOnly ?? false,
       obscureText: isObscureText ?? false,
       decoration: InputDecoration(
         isDense: true,
         hintText: hintText,
         hintStyle: hintTextStyle ?? TextStyles.size13Weight600,
-        fillColor: ColorsManager.moreLightGray,
+        fillColor: fillColor ?? ColorsManager.moreLightGray,
         filled: true,
         suffixIcon: suffixIcon,
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(horizontal: 20, vertical: 18),
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
-              borderSide: BorderSide(
-                color: backgroundColor ?? ColorsManager.mainBlue,
-                width: 1.3,
-              ),
+              borderSide: borderSide ??
+                  BorderSide(
+                    color: backgroundColor ?? ColorsManager.mainBlue,
+                    width: 1.3,
+                  ),
               borderRadius: borderRadius ?? BorderRadius.circular(16),
             ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
-              borderSide: BorderSide(
-                color: backgroundColor ?? ColorsManager.lightGray,
-                width: 1.3,
-              ),
+              borderSide: borderSide ??
+                  BorderSide(
+                    color: backgroundColor ?? ColorsManager.lightGray,
+                    width: 1.3,
+                  ),
               borderRadius: borderRadius ?? BorderRadius.circular(16),
             ),
       ),

@@ -17,6 +17,7 @@ class freshfruit extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Cairo',
+        scaffoldBackgroundColor: Colors.white,
       ),
       localizationsDelegates: [
         S.delegate,

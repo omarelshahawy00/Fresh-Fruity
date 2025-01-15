@@ -12,7 +12,7 @@ class SignUpScreenBody extends StatefulWidget {
 }
 
 class _SignUpScreenBodyState extends State<SignUpScreenBody> {
-  bool? isChecked;
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
                     value: isChecked,
                     onChanged: (value) {
                       setState(() {
-                        isChecked = value;
+                        isChecked = value!;
                       });
                     },
                   ),

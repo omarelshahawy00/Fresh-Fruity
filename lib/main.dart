@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/helper_functions/on_generate_route.dart';
+import 'package:ecommerce_app/core/services/get_it_service.dart';
 import 'package:ecommerce_app/core/services/shared_preferences_singletone.dart';
 import 'package:ecommerce_app/firebase_options.dart';
 import 'package:ecommerce_app/generated/l10n.dart';
@@ -11,6 +12,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  getitSetup();
   runApp(const freshfruit());
   await Prefs.init();
 }

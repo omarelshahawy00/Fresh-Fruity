@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:ecommerce_app/features/auth/domain/entites/user_entite.dart';
 import 'package:ecommerce_app/features/auth/domain/repos/auth_repo.dart';
-import 'package:meta/meta.dart';
 
 part 'sign_up_state.dart';
 

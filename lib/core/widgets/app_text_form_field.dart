@@ -17,6 +17,7 @@ class AppTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.readOnly,
     this.fillColor,
+    this.onSaved,
   });
 
   final String hintText;
@@ -31,10 +32,18 @@ class AppTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final bool? readOnly;
   final Color? fillColor;
+  final String? Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSaved,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'هذا الحقل مطلوب';
+        }
+        return null;
+      },
       readOnly: readOnly ?? false,
       obscureText: isObscureText ?? false,
       decoration: InputDecoration(

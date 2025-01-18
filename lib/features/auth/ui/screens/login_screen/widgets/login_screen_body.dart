@@ -9,10 +9,10 @@ class LoginScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           spacing: 16,
           children: [

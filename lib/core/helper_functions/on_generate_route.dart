@@ -1,8 +1,12 @@
+import 'package:ecommerce_app/core/services/get_it_service.dart';
+import 'package:ecommerce_app/features/auth/domain/repos/auth_repo.dart';
+import 'package:ecommerce_app/features/auth/ui/cubits/login_cubit/login_cubit.dart';
 import 'package:ecommerce_app/features/auth/ui/screens/login_screen/login_screen.dart';
 import 'package:ecommerce_app/features/auth/ui/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:ecommerce_app/features/onboarding/ui/screens/onboarding_screen.dart';
 import 'package:ecommerce_app/features/splash/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   static const String splashScreen = 'splashScreen';
@@ -18,7 +22,10 @@ class AppRouter {
             builder: (context) => const OnboardingScreen());
       case loginScreen:
         return MaterialPageRoute(
-          builder: (context) => const LoginScreen(),
+          builder: (context) => BlocProvider(
+            create: (context) => LoginCubit(getIt<AuthRepo>()),
+            child: const LoginScreen(),
+          ),
         );
       case SignupScreen:
         return MaterialPageRoute(

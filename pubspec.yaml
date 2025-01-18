@@ -52,7 +52,7 @@ dev_dependencies:
   icons_launcher: ^2.0.0
 
 icons_launcher:
-  image_path: 'assets/images/app_icon/app_luncher_icon.png'
+  image_path: 'assets/images/splash_images/FreshFruity.png'
   platforms:
     android:
       enable: true

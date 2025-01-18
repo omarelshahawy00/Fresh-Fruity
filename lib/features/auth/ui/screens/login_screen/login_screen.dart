@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/auth/ui/screens/login_screen/widgets/login_screen_body.dart';
+import 'package:ecommerce_app/features/auth/ui/screens/login_screen/widgets/login_screen_body_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/widgets/custom_appbar.dart';
@@ -10,7 +10,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppbar(context, title: 'تسجيل الدخول'),
-      body: LoginScreenBody(),
+      body: LoginScreenBodyBlocConsumer(),
     );
   }
 }

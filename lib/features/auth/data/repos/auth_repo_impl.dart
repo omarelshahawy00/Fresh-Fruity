@@ -5,7 +5,7 @@ import 'package:ecommerce_app/core/errors/custom_exception.dart';
 import 'package:ecommerce_app/core/errors/failure.dart';
 import 'package:ecommerce_app/core/services/firebase_auth_service.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
-import 'package:ecommerce_app/features/auth/domain/entites/user_entite.dart';
+import 'package:ecommerce_app/features/auth/domain/entities/user_entity.dart';
 import 'package:ecommerce_app/features/auth/domain/repos/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
@@ -25,5 +25,20 @@ class AuthRepoImpl extends AuthRepo {
       log('Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}');
       return left(ServerFailure('حدث خطأ ما الرجاء المحاولة في وقت لاحق'));
     }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      var user =
+          await firebaseAuthService.signInWithEmailAndPassword(email, password);
+      return right(UserModel.formFirebaseUser(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(e.message));
+    } catch (e) {
+      log('Exception in AuthRepoImpl.signInWithEmailAndPassword: ${e.toString()}');
+    }
+    return left(ServerFailure('حدث خطأ ما الرجاء المحاولة في وقت لاحق'));
   }
 }

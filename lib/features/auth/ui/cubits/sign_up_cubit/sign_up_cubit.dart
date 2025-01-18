@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:ecommerce_app/features/auth/domain/entites/user_entite.dart';
+import 'package:ecommerce_app/features/auth/domain/entities/user_entity.dart';
 import 'package:ecommerce_app/features/auth/domain/repos/auth_repo.dart';
 
 part 'sign_up_state.dart';

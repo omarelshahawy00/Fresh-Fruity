@@ -2,7 +2,6 @@ import 'package:ecommerce_app/core/helper_functions/build_error_bar.dart';
 import 'package:ecommerce_app/core/theming/colors.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/core/widgets/app_text_button.dart';
-import 'package:ecommerce_app/core/widgets/app_text_form_field.dart';
 import 'package:ecommerce_app/features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
 import 'package:ecommerce_app/features/auth/ui/screens/sign_up_screen/widgets/input_account_data.dart';
 import 'package:ecommerce_app/features/auth/ui/screens/sign_up_screen/widgets/terms_and_conditions.dart';

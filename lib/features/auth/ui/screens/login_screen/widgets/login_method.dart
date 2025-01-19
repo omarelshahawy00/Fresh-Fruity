@@ -1,7 +1,9 @@
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/core/utils/const_images.dart';
 import 'package:ecommerce_app/core/widgets/app_text_button.dart';
+import 'package:ecommerce_app/features/auth/ui/cubits/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class LoginMethod extends StatelessWidget {
@@ -15,7 +17,7 @@ class LoginMethod extends StatelessWidget {
         AppTextButton(
           leadingIcon: SvgPicture.asset(ConstImages.googleLogin),
           onPressed: () {
-            // TODO
+            BlocProvider.of<LoginCubit>(context).loginWithGoogle();
           },
           buttonText: 'تسجيل بواسطة جوجل',
           textStyle: TextStyles.size16Weight600,

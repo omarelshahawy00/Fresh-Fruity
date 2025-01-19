@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/core/widgets/app_text_form_field.dart';
 import 'package:ecommerce_app/core/widgets/password_field.dart';

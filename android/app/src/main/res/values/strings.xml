@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fresh Fruity</string>
+<string name="facebook_app_id">2268721010195936</string>
+<string name="fb_login_protocol_scheme">fb1234</string>
+<string name="facebook_client_token">971047d8f22b2a6d7e22526cd83be2db</string>
+
+
+</resources>

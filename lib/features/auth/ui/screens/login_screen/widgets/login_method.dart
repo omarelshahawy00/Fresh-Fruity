@@ -35,7 +35,7 @@ class LoginMethod extends StatelessWidget {
         AppTextButton(
           leadingIcon: SvgPicture.asset(ConstImages.facebookLogin),
           onPressed: () {
-            // TODO
+            BlocProvider.of<LoginCubit>(context).loginWithFacebook();
           },
           buttonText: 'تسجيل بواسطة فيسبوك',
           textStyle: TextStyles.size16Weight600,

@@ -45,5 +45,39 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+  <key>CFBundleURLSchemes</key>
+  <array>
+    <string>fb2268721010195936</string>
+  </array>
+  </dict>
+</array>
+<key>FacebookAppID</key>
+<string>2268721010195936</string>
+<key>FacebookClientToken</key>
+<string>8210ac42a902db2596fc201cc4cfdb68</string>
+<key>FacebookDisplayName</key>
+<string>APP-NAME</string>
+
+<key>GIDClientID</key>
+
+<string>442654998013-macr4l55ufd121iskmvndjj6f8u1r0pv.apps.googleusercontent.com</string>
+
+<key>CFBundleURLTypes</key>
+<array>
+	<dict>
+		<key>CFBundleTypeRole</key>
+		<string>Editor</string>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			
+			<string>com.googleusercontent.apps.442654998013-macr4l55ufd121iskmvndjj6f8u1r0pv</string>
+		</array>
+	</dict>
+</array>
+
 </dict>
 </plist>

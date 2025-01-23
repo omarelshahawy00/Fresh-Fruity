@@ -23,7 +23,7 @@ class AuthRepoImpl extends AuthRepo {
     try {
       user = await firebaseAuthService.createUserWithEmailAndPassword(
           email: email, password: password);
-      var userEntity = UserEntity(
+      var userEntity = UserModel(
         email: email,
         uId: user.uid,
         userName: userName,
@@ -67,7 +67,13 @@ class AuthRepoImpl extends AuthRepo {
     try {
       user = await firebaseAuthService.signInWithGoogle();
       var userEntity = UserModel.formFirebaseUser(user);
-      addUserData(user: userEntity);
+      var isUserExist = await dataBaseService.isDataExist(
+          path: BackendConst.isExist, uId: user.uid);
+      if (isUserExist) {
+        await getUserData(uId: user.uid);
+      } else {
+        await addUserData(user: userEntity);
+      }
       return right(userEntity);
     } catch (e) {
       if (user != null) {

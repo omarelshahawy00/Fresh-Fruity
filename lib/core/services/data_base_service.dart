@@ -6,4 +6,6 @@ abstract class DataBaseService {
 
   Future<Map<String, dynamic>> getData(
       {required String path, required String uId});
+
+  Future<bool> isDataExist({required String path, required String uId});
 }

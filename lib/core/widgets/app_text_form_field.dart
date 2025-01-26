@@ -18,6 +18,7 @@ class AppTextFormField extends StatelessWidget {
     this.readOnly,
     this.fillColor,
     this.onSaved,
+    this.prefixIcon,
   });
 
   final String hintText;
@@ -30,6 +31,7 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final Color? backgroundColor;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final bool? readOnly;
   final Color? fillColor;
   final String? Function(String?)? onSaved;
@@ -53,6 +55,7 @@ class AppTextFormField extends StatelessWidget {
         fillColor: fillColor ?? ColorsManager.moreLightGray,
         filled: true,
         suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(horizontal: 20, vertical: 18),
         focusedBorder: focusedBorder ??

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/services/firebase_auth_service.dart';
 import 'package:ecommerce_app/core/services/shared_preferences_singletone.dart';
 import 'package:ecommerce_app/core/utils/app_images.dart';
 import 'package:ecommerce_app/core/utils/constants.dart';
@@ -47,11 +48,18 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        bool seen = Prefs.getBool(isOnBoardingViewSeen);
-        if (seen == false) {
-          Navigator.pushReplacementNamed(context, AppRouter.onboardingScreen);
-        } else {
+        bool onboardingSeen = Prefs.getBool(isOnBoardingViewSeen);
+        bool isUserLoggedIn = FirebaseAuthService().isUserLoggedIn();
+
+        if (onboardingSeen) {
           Navigator.pushReplacementNamed(context, AppRouter.loginScreen);
+          if (isUserLoggedIn) {
+            Navigator.pushReplacementNamed(context, AppRouter.homeScreen);
+          } else {
+            Navigator.pushReplacementNamed(context, AppRouter.loginScreen);
+          }
+        } else {
+          Navigator.pushReplacementNamed(context, AppRouter.onboardingScreen);
         }
       },
     );

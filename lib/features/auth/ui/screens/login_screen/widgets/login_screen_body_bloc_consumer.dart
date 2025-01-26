@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/helper_functions/on_generate_route.dart';
 import 'package:ecommerce_app/core/widgets/custom_modal_progress_hud.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +15,7 @@ class LoginScreenBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginLoaded) {
+          Navigator.pushReplacementNamed(context, AppRouter.homeScreen);
         } else if (state is LoginError) {
           buildSnackBar(context, state.message);
         }

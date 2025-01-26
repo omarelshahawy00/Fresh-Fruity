@@ -90,7 +90,14 @@ class AuthRepoImpl extends AuthRepo {
     try {
       user = await firebaseAuthService.signInWithFacebook();
       var userEntity = UserModel.formFirebaseUser(user);
-      addUserData(user: userEntity);
+      var isUserExist = await dataBaseService.isDataExist(
+          path: BackendConst.isExist, uId: user.uid);
+      if (isUserExist) {
+        await getUserData(uId: user.uid);
+      } else {
+        await addUserData(user: userEntity);
+        await getUserData(uId: user.uid);
+      }
       return right(userEntity);
     } catch (e) {
       if (user != null) {
@@ -105,7 +112,7 @@ class AuthRepoImpl extends AuthRepo {
   Future<void> addUserData({required UserEntity user}) async {
     await dataBaseService.addData(
       path: BackendConst.addUserData,
-      data: user.toMap(),
+      data: UserModel.fromUserEntity(user).toMap(),
       docId: user.uId,
     );
   }

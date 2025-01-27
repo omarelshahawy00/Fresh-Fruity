@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/features/home/ui/screens/widgets/best_selling_header.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/custom_home_appbar.dart';
-import 'package:ecommerce_app/features/home/ui/screens/widgets/fruits_grid_view.dart';
+import 'package:ecommerce_app/features/home/ui/screens/widgets/best_selling_grid_view.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/home_search_field.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/offers_listview.dart';
 import 'package:flutter/material.dart';
@@ -31,13 +31,12 @@ class HomeScreenBody extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: BestSellingHeader(),
                 ),
-                SizedBox(height: 8),
               ],
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            sliver: FruitsGridView(),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            sliver: BestSellingGridView(),
           ),
         ],
       ),

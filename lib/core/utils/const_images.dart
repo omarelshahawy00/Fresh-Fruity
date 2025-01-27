@@ -21,4 +21,18 @@ class ConstImages {
 
   static const String ellipsOffers =
       'assets/images/home_images/Ellipse_offers.svg';
+  static const String home_inactive =
+      'assets/images/home_images/home_inactive.svg';
+  static const String home_active = 'assets/images/home_images/home_active.svg';
+  static const String cart_inactive =
+      'assets/images/home_images/cart_inactive.svg';
+  static const String cart_active = 'assets/images/home_images/cart_active.svg';
+  static const String profile_inactive =
+      'assets/images/home_images/profile_inactive.svg';
+  static const String profile_active =
+      'assets/images/home_images/profile_active.svg';
+  static const String product_inactive =
+      'assets/images/home_images/product_inactive.svg';
+  static const String product_active =
+      'assets/images/home_images/product_active.svg';
 }

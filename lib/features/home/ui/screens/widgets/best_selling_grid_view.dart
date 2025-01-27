@@ -1,8 +1,8 @@
 import 'package:ecommerce_app/features/home/ui/screens/widgets/fruit_card_item.dart';
 import 'package:flutter/material.dart';
 
-class FruitsGridView extends StatelessWidget {
-  const FruitsGridView({super.key});
+class BestSellingGridView extends StatelessWidget {
+  const BestSellingGridView({super.key});
 
   @override
   Widget build(BuildContext context) {

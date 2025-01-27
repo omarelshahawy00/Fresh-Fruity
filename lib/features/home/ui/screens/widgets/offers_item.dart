@@ -65,18 +65,16 @@ class OffersItem extends StatelessWidget {
                     SizedBox(
                       height: 8,
                     ),
-                    Positioned(
-                      child: AppTextButton(
-                        onPressed: () {},
-                        buttonText: 'تسوق الان',
-                        textStyle: TextStyles.size13Weight700.copyWith(
-                          color: ColorsManager.mainGreen,
-                        ),
-                        buttonWidth: 116,
-                        buttonHeight: 32,
-                        borderRadius: BorderRadius.circular(4),
-                        backgroundColor: Colors.white,
+                    AppTextButton(
+                      onPressed: () {},
+                      buttonText: 'تسوق الان',
+                      textStyle: TextStyles.size13Weight700.copyWith(
+                        color: ColorsManager.mainGreen,
                       ),
+                      buttonWidth: 116,
+                      buttonHeight: 32,
+                      borderRadius: BorderRadius.circular(4),
+                      backgroundColor: Colors.white,
                     ),
                     SizedBox(
                       height: 29,

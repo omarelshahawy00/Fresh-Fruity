@@ -35,35 +35,34 @@ class AppTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        style: TextButton.styleFrom(
-          fixedSize: Size(buttonWidth ?? double.maxFinite, buttonHeight ?? 52),
-          backgroundColor: backgroundColor ?? ColorsManager.mainBlue,
-          shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ?? BorderRadius.circular(16),
-            side: borderSide ??
-                BorderSide(
-                  color: Color(0xffDDDFDF),
-                  width: 1,
-                ),
-          ),
-          padding: EdgeInsets.symmetric(
-            horizontal: horizontalPadding ?? 0,
-            vertical: verticalPadding ?? 0,
-          ),
+      style: TextButton.styleFrom(
+        fixedSize: Size(buttonWidth ?? double.maxFinite, buttonHeight ?? 52),
+        backgroundColor: backgroundColor ?? ColorsManager.mainBlue,
+        shape: RoundedRectangleBorder(
+          borderRadius: borderRadius ?? BorderRadius.circular(16),
+          side: borderSide ??
+              BorderSide(
+                color: Color(0xffDDDFDF),
+                width: 1,
+              ),
         ),
-        onPressed: onPressed,
-        child: ListTile(
-          visualDensity: VisualDensity(
-            vertical: VisualDensity.minimumDensity,
-          ),
-          leading: leadingIcon,
-          title: FittedBox(
-            child: Text(
-              buttonText,
-              textAlign: TextAlign.center,
-              style: textStyle ?? TextStyles.size16Weight700,
-            ),
-          ),
-        ));
+        padding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding ?? 0,
+          vertical: verticalPadding ?? 0,
+        ),
+      ),
+      onPressed: onPressed,
+      child: ListTile(
+        visualDensity: VisualDensity(
+          vertical: VisualDensity.minimumDensity,
+        ),
+        leading: leadingIcon,
+        title: Text(
+          buttonText,
+          textAlign: TextAlign.center,
+          style: textStyle ?? TextStyles.size16Weight700,
+        ),
+      ),
+    );
   }
 }

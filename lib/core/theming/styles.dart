@@ -12,6 +12,11 @@ class TextStyles {
     fontSize: 13.0,
     fontWeight: FontWeight.w600,
   );
+  static const TextStyle size13Weight400 = TextStyle(
+    fontFamily: 'Cairo',
+    fontSize: 13.0,
+    fontWeight: FontWeight.w400,
+  );
   static const TextStyle size13Weight700 = TextStyle(
     fontFamily: 'Cairo',
     fontSize: 13.0,

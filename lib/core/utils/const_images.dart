@@ -15,4 +15,10 @@ class ConstImages {
   static const String notificationIcon = 'assets/images/home_images/notfi.svg';
   static const String filter = 'assets/images/home_images/filter.svg';
   static const String search = 'assets/images/home_images/search.svg';
+
+  static const String watermelon11 =
+      'assets/images/home_images/watermelon11.png';
+
+  static const String ellipsOffers =
+      'assets/images/home_images/Ellipse_offers.svg';
 }

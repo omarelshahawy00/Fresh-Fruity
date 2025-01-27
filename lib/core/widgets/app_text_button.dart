@@ -57,10 +57,12 @@ class AppTextButton extends StatelessWidget {
             vertical: VisualDensity.minimumDensity,
           ),
           leading: leadingIcon,
-          title: Text(
-            buttonText,
-            textAlign: TextAlign.center,
-            style: textStyle ?? TextStyles.size16Weight700,
+          title: FittedBox(
+            child: Text(
+              buttonText,
+              textAlign: TextAlign.center,
+              style: textStyle ?? TextStyles.size16Weight700,
+            ),
           ),
         ));
   }

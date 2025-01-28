@@ -19,7 +19,7 @@ class OffersItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(4),
       ),
       child: AspectRatio(
-        aspectRatio: 342 / 158,
+        aspectRatio: 342 / 165,
         child: Stack(
           children: [
             Positioned(

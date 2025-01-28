@@ -8,6 +8,7 @@ class BottomNavbarInactiveItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       image,
+      height: 25,
     );
   }
 }

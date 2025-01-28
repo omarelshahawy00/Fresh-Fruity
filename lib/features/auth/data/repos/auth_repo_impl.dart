@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
@@ -5,7 +6,9 @@ import 'package:ecommerce_app/core/errors/custom_exception.dart';
 import 'package:ecommerce_app/core/errors/failure.dart';
 import 'package:ecommerce_app/core/services/data_base_service.dart';
 import 'package:ecommerce_app/core/services/firebase_auth_service.dart';
+import 'package:ecommerce_app/core/services/shared_preferences_singletone.dart';
 import 'package:ecommerce_app/core/utils/backend_const.dart';
+import 'package:ecommerce_app/core/utils/constants.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
 import 'package:ecommerce_app/features/auth/domain/entities/user_entity.dart';
 import 'package:ecommerce_app/features/auth/domain/repos/auth_repo.dart';
@@ -52,6 +55,7 @@ class AuthRepoImpl extends AuthRepo {
           await firebaseAuthService.signInWithEmailAndPassword(email, password);
 
       var userEntity = await getUserData(uId: user.uid);
+      await saveUserData(user: userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
@@ -122,5 +126,11 @@ class AuthRepoImpl extends AuthRepo {
     var user =
         await dataBaseService.getData(path: BackendConst.getUserData, uId: uId);
     return UserModel.fromJson(user);
+  }
+
+  @override
+  Future saveUserData({required UserEntity user}) async {
+    var jsonData = jsonEncode(UserModel.fromUserEntity(user).toMap());
+    await Prefs.setString(userData, jsonData);
   }
 }

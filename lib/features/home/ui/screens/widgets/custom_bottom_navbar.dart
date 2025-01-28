@@ -8,6 +8,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'nav_bar_item.dart';
+
 class CustomBottomNavbar extends StatefulWidget {
   const CustomBottomNavbar({super.key});
 
@@ -58,23 +60,5 @@ class _CustomBottomNavbarState extends State<CustomBottomNavbar> {
         ),
       ),
     );
-  }
-}
-
-class NavBarItem extends StatelessWidget {
-  const NavBarItem(
-      {super.key, required this.isSelected, required this.bottomNavbarEntity});
-  final bool isSelected;
-  final BottomNavbarEntity bottomNavbarEntity;
-  @override
-  Widget build(BuildContext context) {
-    return isSelected
-        ? BottomNavbarActiveItem(
-            image: bottomNavbarEntity.activeImage,
-            text: bottomNavbarEntity.title,
-          )
-        : BottomNavbarInactiveItem(
-            image: bottomNavbarEntity.inactiveImage,
-          );
   }
 }

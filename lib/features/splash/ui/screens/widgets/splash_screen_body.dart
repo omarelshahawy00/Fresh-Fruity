@@ -54,7 +54,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
         if (onboardingSeen) {
           Navigator.pushReplacementNamed(context, AppRouter.loginScreen);
           if (isUserLoggedIn) {
-            Navigator.pushReplacementNamed(context, AppRouter.homeScreen);
+            Navigator.pushReplacementNamed(context, AppRouter.SignupScreen);
           } else {
             Navigator.pushReplacementNamed(context, AppRouter.loginScreen);
           }

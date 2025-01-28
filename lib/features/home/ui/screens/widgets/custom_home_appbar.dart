@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/helper_functions/get_user.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:ecommerce_app/core/utils/const_images.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class CustomHomeAppbar extends StatelessWidget {
         style: TextStyles.size16Weight600.copyWith(color: Colors.grey),
       ),
       subtitle: Text(
-        'عمر الشهاوي',
+        getUser().userName,
         style: TextStyles.size16Weight700.copyWith(color: Colors.black),
       ),
       trailing: Container(

@@ -74,9 +74,12 @@ class AuthRepoImpl extends AuthRepo {
       var isUserExist = await dataBaseService.isDataExist(
           path: BackendConst.isExist, uId: user.uid);
       if (isUserExist) {
-        await getUserData(uId: user.uid);
+        var userEntity = await getUserData(uId: user.uid);
+        await saveUserData(user: userEntity);
       } else {
         await addUserData(user: userEntity);
+        var userEntity1 = await getUserData(uId: user.uid);
+        await saveUserData(user: userEntity1);
       }
       return right(userEntity);
     } catch (e) {
@@ -97,10 +100,12 @@ class AuthRepoImpl extends AuthRepo {
       var isUserExist = await dataBaseService.isDataExist(
           path: BackendConst.isExist, uId: user.uid);
       if (isUserExist) {
-        await getUserData(uId: user.uid);
+        var userEntity = await getUserData(uId: user.uid);
+        await saveUserData(user: userEntity);
       } else {
         await addUserData(user: userEntity);
-        await getUserData(uId: user.uid);
+        var userEntity1 = await getUserData(uId: user.uid);
+        await saveUserData(user: userEntity1);
       }
       return right(userEntity);
     } catch (e) {

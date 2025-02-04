@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/core/theming/styles.dart';
-import 'package:ecommerce_app/features/home/ui/screens/widgets/best_selling_grid_view_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
 class BestSellingScreenBody extends StatelessWidget {

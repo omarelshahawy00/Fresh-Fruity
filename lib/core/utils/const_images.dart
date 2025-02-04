@@ -35,4 +35,5 @@ class ConstImages {
       'assets/images/home_images/product_inactive.svg';
   static const String product_active =
       'assets/images/home_images/product_active.svg';
+  static const String filterIcon2 = 'assets/images/home_images/filter2.svg';
 }

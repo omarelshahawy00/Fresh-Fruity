@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_app/features/home/domain/entites/bottom_navbar_entity.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/bottom_navbar_active_item.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/bottom_navbar_inactive_item.dart';

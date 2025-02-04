@@ -1,24 +1,13 @@
-import 'package:ecommerce_app/core/theming/colors.dart';
-import 'package:ecommerce_app/core/theming/styles.dart';
-import 'package:ecommerce_app/core/utils/const_images.dart';
 import 'package:ecommerce_app/features/home/domain/entites/bottom_navbar_entity.dart';
-import 'package:ecommerce_app/features/home/ui/screens/widgets/bottom_navbar_active_item.dart';
-import 'package:ecommerce_app/features/home/ui/screens/widgets/bottom_navbar_inactive_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'nav_bar_item.dart';
 
-class CustomBottomNavbar extends StatefulWidget {
-  const CustomBottomNavbar({super.key});
-
-  @override
-  State<CustomBottomNavbar> createState() => _CustomBottomNavbarState();
-}
-
-class _CustomBottomNavbarState extends State<CustomBottomNavbar> {
-  int selectedIndex = 0;
+class CustomBottomNavbar extends StatelessWidget {
+  final Function(int) onItemTapped;
+  final int selectedIndex;
+  const CustomBottomNavbar(
+      {super.key, required this.onItemTapped, required this.selectedIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +37,9 @@ class _CustomBottomNavbarState extends State<CustomBottomNavbar> {
               return Expanded(
                 flex: index == selectedIndex ? 3 : 2,
                 child: GestureDetector(
-                  onTap: () => setState(() => selectedIndex = index),
+                  onTap: () {
+                    onItemTapped(index);
+                  },
                   child: NavBarItem(
                     isSelected: selectedIndex == index,
                     bottomNavbarEntity: item,

@@ -2,4 +2,5 @@ class BackendConst {
   static const String addUserData = 'users';
   static const String getUserData = 'users';
   static const String isExist = 'users';
+  static const String products = 'products';
 }

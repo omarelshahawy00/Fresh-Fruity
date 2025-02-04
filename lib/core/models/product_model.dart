@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:ecommerce_app/core/entities/product_entity.dart';
 
 class ProductModel {
@@ -7,8 +6,9 @@ class ProductModel {
   final String code;
   final String description;
   final bool isFeatured;
-  final File? imageFile;
+
   final String? imgUrl;
+  final num sellingCount;
 
   ProductModel({
     required this.isFeatured,
@@ -16,8 +16,8 @@ class ProductModel {
     required this.price,
     required this.code,
     required this.description,
-    this.imageFile,
     this.imgUrl,
+    required this.sellingCount,
   });
 
   ProductEntity toProductEntity() {
@@ -31,6 +31,18 @@ class ProductModel {
     );
   }
 
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
+    return ProductModel(
+      name: json['name'],
+      price: json['price'],
+      code: json['code'],
+      description: json['description'],
+      isFeatured: json['isFeatured'],
+      imgUrl: json['imgUrl'],
+      sellingCount: json['sellingCount'],
+    );
+  }
+
   toJson() {
     return {
       'name': name,
@@ -39,6 +51,7 @@ class ProductModel {
       'description': description,
       'isFeatured': isFeatured,
       'imgUrl': imgUrl,
+      'sellingCount': sellingCount,
     };
   }
 }

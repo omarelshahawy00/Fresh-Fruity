@@ -3,9 +3,10 @@ import 'package:ecommerce_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:ecommerce_app/features/auth/ui/cubits/login_cubit/login_cubit.dart';
 import 'package:ecommerce_app/features/auth/ui/screens/login_screen/login_screen.dart';
 import 'package:ecommerce_app/features/auth/ui/screens/sign_up_screen/sign_up_screen.dart';
+import 'package:ecommerce_app/features/best_selling/ui/screens/best_selling_screen.dart';
 import 'package:ecommerce_app/features/home/ui/screens/main_screen.dart';
-import 'package:ecommerce_app/features/home/ui/screens/widgets/products_screen.dart';
 import 'package:ecommerce_app/features/onboarding/ui/screens/onboarding_screen.dart';
+import 'package:ecommerce_app/features/products/ui/screens/products_screen.dart';
 import 'package:ecommerce_app/features/splash/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,7 @@ class AppRouter {
   static const String SignupScreen = 'SignupScreen';
   static const String homeScreen = 'homeScreen';
   static const String productScreen = 'productScreen';
+  static const String bestSellingScreen = 'bestSellingScreen';
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splashScreen:
@@ -42,6 +44,10 @@ class AppRouter {
       case productScreen:
         return MaterialPageRoute(
           builder: (context) => const ProductsScreen(),
+        );
+      case bestSellingScreen:
+        return MaterialPageRoute(
+          builder: (context) => const BestSellingScreen(),
         );
       default:
         return MaterialPageRoute(builder: (context) => const Scaffold());

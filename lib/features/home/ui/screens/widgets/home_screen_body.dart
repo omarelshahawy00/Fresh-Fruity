@@ -2,7 +2,6 @@ import 'package:ecommerce_app/core/cubits/products_cubit/products_cubit.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/best_selling_grid_view_bloc_builder.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/best_selling_header.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/custom_home_appbar.dart';
-import 'package:ecommerce_app/features/home/ui/screens/widgets/best_selling_grid_view.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/home_search_field.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/offers_listview.dart';
 import 'package:flutter/material.dart';

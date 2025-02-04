@@ -26,10 +26,14 @@ class BottomNavbarActiveItem extends StatelessWidget {
               radius: 15,
               backgroundColor: ColorsManager.mainGreen,
               child: Container(
-                  decoration: BoxDecoration(
-                    color: ColorsManager.mainGreen,
-                  ),
-                  child: SvgPicture.asset(image)),
+                decoration: BoxDecoration(
+                  color: ColorsManager.mainGreen,
+                ),
+                child: SvgPicture.asset(
+                  image,
+                  height: 18,
+                ),
+              ),
             ),
             SizedBox(
               width: 4,

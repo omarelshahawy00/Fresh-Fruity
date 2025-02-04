@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/helper_functions/on_generate_route.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,9 @@ class BestSellingHeader extends StatelessWidget {
         ),
         const Spacer(),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, AppRouter.bestSellingScreen);
+          },
           child: Text(
             'المزيد',
             style: TextStyles.size13Weight400.copyWith(color: Colors.grey),

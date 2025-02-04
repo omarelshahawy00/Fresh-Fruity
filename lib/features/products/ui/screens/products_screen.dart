@@ -6,6 +6,8 @@ class ProductsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ProductsScreenBody();
+    return const Scaffold(
+      body: ProductsScreenBody(),
+    );
   }
 }

@@ -6,9 +6,15 @@ class BottomNavbarInactiveItem extends StatelessWidget {
   final String image;
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      image,
-      height: 25,
+    return Container(
+      height: 80,
+      color: Colors.transparent,
+      child: Center(
+        child: SvgPicture.asset(
+          image,
+          height: 20,
+        ),
+      ),
     );
   }
 }

@@ -33,8 +33,6 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             HomeScreen(),
             ProductsScreen(),
-            HomeScreen(),
-            HomeScreen(),
           ],
         ),
       ),

@@ -15,34 +15,34 @@ class ProductsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        appBar: buildAppbar(
-          context,
-          title: 'المنتجات',
-          leading: SizedBox(),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: Color(0xffeef8ed),
-                  shape: BoxShape.circle,
-                ),
-                child: SvgPicture.asset(
-                  ConstImages.notificationIcon,
-                  height: 20,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: Scaffold(
+          appBar: buildAppbar(
+            context,
+            title: 'المنتجات',
+            leading: SizedBox(),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    color: Color(0xffeef8ed),
+                    shape: BoxShape.circle,
+                  ),
+                  child: SvgPicture.asset(
+                    ConstImages.notificationIcon,
+                    height: 20,
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-        body: BlocProvider(
-          create: (context) =>
-              ProductsCubit(getIt.get<ProductRepo>())..getProducts(),
-          child: ProductsScreenBody(
-            productsLength:
-                BlocProvider.of<ProductsCubit>(context).productsLength,
+            ],
+          ),
+          body: BlocProvider(
+            create: (context) =>
+                ProductsCubit(getIt.get<ProductRepo>())..getProducts(),
+            child: ProductsScreenBody(),
           ),
         ),
       ),

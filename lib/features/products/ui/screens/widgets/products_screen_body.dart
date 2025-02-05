@@ -4,13 +4,17 @@ import 'package:ecommerce_app/core/utils/const_images.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/best_selling_header.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/home_search_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../../core/cubits/products_cubit/products_cubit.dart';
 import '../../../../home/ui/screens/widgets/best_selling_grid_view_bloc_builder.dart';
 
 class ProductsScreenBody extends StatelessWidget {
-  const ProductsScreenBody({super.key, required this.productsLength});
-  final int productsLength;
+  const ProductsScreenBody({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,13 +29,13 @@ class ProductsScreenBody extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: HomeSearchField(),
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: 16),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Row(
                     children: [
                       Text(
-                        'نتائج ($productsLength)',
+                        '(${context.read<ProductsCubit>().productsLength}) نتائج ',
                         style: TextStyles.size16Weight700
                             .copyWith(color: Colors.black),
                       ),
@@ -42,6 +46,7 @@ class ProductsScreenBody extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: 16),
               ],
             ),
           ),

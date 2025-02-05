@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/cart/ui/screens/cart_screen.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/home_screen.dart';
 import 'package:ecommerce_app/features/home/ui/screens/widgets/custom_bottom_navbar.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,7 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             HomeScreen(),
             ProductsScreen(),
+            CartScreen(),
           ],
         ),
       ),

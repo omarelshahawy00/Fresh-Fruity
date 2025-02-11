@@ -1,7 +1,10 @@
 import 'package:ecommerce_app/core/entities/product_entity.dart';
 import 'package:ecommerce_app/core/theming/colors.dart';
 import 'package:ecommerce_app/core/theming/styles.dart';
+import 'package:ecommerce_app/features/cart/domain/entities/cart_item_entity.dart';
+import 'package:ecommerce_app/features/cart/ui/cubits/cart_cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FruitCardItem extends StatelessWidget {
   const FruitCardItem({super.key, required this.product});
@@ -15,12 +18,6 @@ class FruitCardItem extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Positioned(
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.favorite_border_outlined),
-            ),
-          ),
           Positioned.fill(
             child: Column(
               children: [
@@ -30,8 +27,10 @@ class FruitCardItem extends StatelessWidget {
                 Flexible(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Image.network(
-                      '${product.imgUrl}',
+                    child: Center(
+                      child: Image.network(
+                        '${product.imgUrl}',
+                      ),
                     ),
                   ),
                 ),
@@ -64,13 +63,24 @@ class FruitCardItem extends StatelessWidget {
                   trailing: CircleAvatar(
                     radius: 18,
                     backgroundColor: ColorsManager.mainGreen,
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        context.read<CartCubit>().addItemToCart(product);
+                      },
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.favorite_border_outlined),
             ),
           ),
         ],

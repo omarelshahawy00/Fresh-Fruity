@@ -1,5 +1,7 @@
 import 'package:ecommerce_app/core/theming/colors.dart';
+import 'package:ecommerce_app/features/cart/ui/cubits/cart_cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/theming/styles.dart';
 
@@ -18,7 +20,7 @@ class CartNumOfProduct extends StatelessWidget {
           color: ColorsManager.mintgreen,
           child: Center(
             child: Text(
-              'لديك 3 من المنتجات في سله التسوق',
+              'لديك ${context.watch<CartCubit>().cartEntity.cartItemsList.length} من المنتجات في سله التسوق',
               style: TextStyles.size13Weight400,
             ),
           ),

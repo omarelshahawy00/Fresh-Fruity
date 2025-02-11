@@ -6,11 +6,12 @@ class ProductModel {
   final String code;
   final String description;
   final bool isFeatured;
-
   final String? imgUrl;
   final num sellingCount;
+  final num unitAmount;
 
   ProductModel({
+    required this.unitAmount,
     required this.isFeatured,
     required this.name,
     required this.price,
@@ -22,13 +23,13 @@ class ProductModel {
 
   ProductEntity toProductEntity() {
     return ProductEntity(
-      name: name,
-      price: price,
-      code: code,
-      description: description,
-      isFeatured: isFeatured,
-      imgUrl: imgUrl,
-    );
+        name: name,
+        price: price,
+        code: code,
+        description: description,
+        isFeatured: isFeatured,
+        imgUrl: imgUrl,
+        unitAmount: unitAmount);
   }
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -40,18 +41,7 @@ class ProductModel {
       isFeatured: json['isFeatured'],
       imgUrl: json['imgUrl'],
       sellingCount: json['sellingCount'],
+      unitAmount: json['unitAmount'],
     );
-  }
-
-  toJson() {
-    return {
-      'name': name,
-      'price': price,
-      'code': code,
-      'description': description,
-      'isFeatured': isFeatured,
-      'imgUrl': imgUrl,
-      'sellingCount': sellingCount,
-    };
   }
 }
